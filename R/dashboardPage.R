@@ -29,13 +29,13 @@
 #' }
 #' @export
 dashboardPage <- function(header, sidebar, body, title = NULL,
-  skin = c("blue", "black", "purple", "green", "red", "yellow")) {
-
+                          skin = c("blue", "black", "purple", "green", "red", "yellow", "blue", "black sidebar-mini", "purple sidebar-mini", "green sidebar-mini", "red sidebar-mini", "yellow sidebar-mini")) {
+  
   tagAssert(header, type = "header", class = "main-header")
   tagAssert(sidebar, type = "aside", class = "main-sidebar")
   tagAssert(body, type = "div", class = "content-wrapper")
   skin <- match.arg(skin)
-
+  
   extractTitle <- function(header) {
     x <- header$children[[1]]
     if (x$name == "span" &&
@@ -48,18 +48,18 @@ dashboardPage <- function(header, sidebar, body, title = NULL,
       ""
     }
   }
-
+  
   title <- title %OR% extractTitle(header)
-
+  
   content <- div(class = "wrapper",
-    header,
-    sidebar,
-    body
+                 header,
+                 sidebar,
+                 body
   )
-
+  
   addDeps(
     tags$body(class = paste0("skin-", skin), style = "min-height: 611px;",
-      shiny::bootstrapPage(content, title = title)
+              shiny::bootstrapPage(content, title = title)
     )
   )
 }
