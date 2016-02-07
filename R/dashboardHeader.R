@@ -7,6 +7,8 @@
 #'   will also be used as the title shown in the browser's title bar. If you
 #'   want that to be different from the text in the dashboard header bar, set
 #'   the \code{title} in \code{\link{dashboardPage}}.
+#' @param titleMini An optional title to show in the headerbar when the sidebar
+#' collapsed.
 #' @param titleWidth The width of the title area. This must either be a number
 #'   which specifies the width in pixels, or a string that specifies the width
 #'   in CSS units.
@@ -86,7 +88,7 @@
 #' )
 #' }
 #' @export
-dashboardHeader <- function(..., title = NULL, titleWidth = NULL, disable = FALSE, .list = NULL) {
+dashboardHeader <- function(..., title = NULL, titleMini = NULL, titleWidth = NULL, disable = FALSE, .list = NULL) {
   items <- c(list(...), .list)
   lapply(items, tagAssert, type = "li", class = "dropdown")
   

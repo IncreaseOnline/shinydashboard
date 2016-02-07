@@ -8,7 +8,11 @@
 #' @param title A title to display in the browser's title bar. If no value is
 #'   provided, it will try to extract the title from the \code{dashboardHeader}.
 #' @param skin A color theme. One of \code{"blue"}, \code{"black"},
-#'   \code{"purple"}, \code{"green"}, \code{"red"}, or \code{"yellow"}.
+#'   \code{"purple"}, \code{"green"}, \code{"red"}, or \code{"yellow"}. Append 
+#'   sidebar-mini to the color's name to use a collapsible sidebar that still 
+#'   shows the icons when collapsed. For example: skin = "black sidebar-mini"). 
+#'   Append sidebar-collapse to start the sidebar in a collapsed state. For 
+#'   example: (for example skin = "black sidebar-mini sidebar-collapse")
 #'
 #' @seealso \code{\link{dashboardHeader}}, \code{\link{dashboardSidebar}},
 #'   \code{\link{dashboardBody}}.
@@ -29,7 +33,7 @@
 #' }
 #' @export
 dashboardPage <- function(header, sidebar, body, title = NULL,
-                          skin = c("blue", "black", "purple", "green", "red", "yellow", "blue", "black sidebar-mini", "purple sidebar-mini", "green sidebar-mini", "red sidebar-mini", "yellow sidebar-mini")) {
+                          skin = c("blue", "black", "purple", "green", "red", "yellow", "blue", "black sidebar-mini", "purple sidebar-mini", "green sidebar-mini", "red sidebar-mini", "yellow sidebar-mini", "black sidebar-mini sidebar-collapse", "purple sidebar-mini sidebar-collapse", "green sidebar-mini sidebar-collapse", "red sidebar-mini sidebar-collapse", "yellow sidebar-mini sidebar-collapse")) {
   
   tagAssert(header, type = "header", class = "main-header")
   tagAssert(sidebar, type = "aside", class = "main-sidebar")
