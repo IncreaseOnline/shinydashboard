@@ -11,7 +11,7 @@ $(function() {
   // code ensures that only one item will have the "active" class.
   var deactivateOtherTabs = function() {
     var $this = $(this);
-    var $sidebarMenu = $this.closest("ul.sidebar-menu");
+    var $sidebarMenu = $(".sidebar-menu, .dropdown-menu");
 
     // Find all tab links under sidebar-menu
     var $tablinks = $sidebarMenu.find("a[data-toggle='tab']");
