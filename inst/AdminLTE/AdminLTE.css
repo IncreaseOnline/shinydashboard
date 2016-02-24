@@ -1909,6 +1909,39 @@ a:focus {
   font-weight: 400;
   font-size: 12px;
 }
+
+/* Overlays for tab-pane divs */
+.tab-pane > .overlay,
+.overlay-wrapper > .overlay,
+.tab-pane > .loading-img,
+.overlay-wrapper > .loading-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tab-pane .overlay,
+.overlay-wrapper .overlay {
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+}
+.tab-pane .overlay > .fa,
+.overlay-wrapper .overlay > .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  color: #000;
+  font-size: 30px;
+}
+.tab-pane .overlay.dark,
+.overlay-wrapper .overlay.dark {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /* Widget: TODO LIST */
 .todo-list {
   margin: 0;
